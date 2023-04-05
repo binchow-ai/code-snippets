@@ -4,4 +4,4 @@
 - terraform apply
 
 ## If you need to remove the infrastructure managed by terraform you can do so using the 
-terraform destroy
+- terraform destroy
