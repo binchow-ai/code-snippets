@@ -1,0 +1,2 @@
+- cd lambda-mongo
+- rm -rf aws.zip && zip -r aws.zip *
