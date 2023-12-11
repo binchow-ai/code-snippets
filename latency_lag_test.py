@@ -13,7 +13,7 @@ startOptimeDate = None
 def connect():
     try:
         conn = MongoClient(
-            "mongodb+srv://binzhou:1Qaz2wsx@zoom-test.baqo4.mongodb.net/?retryWrites=true&w=majority")
+            "mongodb+srv://user:password@zoom-test.baqo4.mongodb.net/?retryWrites=true&w=majority")
     except errors.PyMongoError as py_mongo_error:
         print('Error in MongoDB connection: %s' %
               str(py_mongo_error))
