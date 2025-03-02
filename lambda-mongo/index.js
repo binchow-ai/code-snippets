@@ -23,7 +23,8 @@ function processEvent(event, context, callback) {
     console.log('Calling MongoDB Atlas from AWS Lambda with event: ' + JSON.stringify(event));
     var jsonContents = JSON.parse(JSON.stringify(event));
 
-    //the following line is critical for performance reasons to allow re-use of database connections across calls to this Lambda function and avoid closing the database connection. The first call to this lambda function takes about 5 seconds to complete, while subsequent, close calls will only take a few hundred milliseconds.
+    //the following line is critical for performance reasons to allow re-use of database connections across calls to this Lambda function and avoid closing the database connection. 
+    //The first call to this lambda function takes about 5 seconds to complete, while subsequent, close calls will only take a few hundred milliseconds.
     context.callbackWaitsForEmptyEventLoop = false;
 
     //date conversion for grades array
@@ -39,7 +40,9 @@ function processEvent(event, context, callback) {
 
     try {
         //testing if the database connection exists and is connected to Atlas so we can try to re-use it
-        if (cachedDb && cachedDb.serverConfig.isConnected()) {
+        //if (cachedDb && cachedDb.serverConfig.isConnected()) {
+        if (cachedDb) {
+            console.log(`re-used database connection`);    
             createDoc(cachedDb, jsonContents, callback);
         }
         else {

@@ -6,4 +6,4 @@ terraform {
       source = "mongodb/mongodbatlas"
     }
   }
-}gi
+}
