@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 安装必要的软件包
-sudo yum install -y zsh git python3 util-linux-user
+sudo yum install -y zsh git python3 util-linux-user ython3-pip
 
 # 安装 oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
